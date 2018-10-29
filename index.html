@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="utf-8">
+    <title>Bonus</title>
+  </head>
+  <!-- on initialise l'application angularjs -->
+   <body ng-app="">
+     <form name="monFormulaire">
+     <input type="email" name="monTexte" ng-model="monTexte" required>
+     <!-- affiche E-mail-requis quand aucun texte est saisie-->
+     <div ng-show="monFormulaire.monTexte.$error.required">Email-requis</div>
+     <!-- affiche E-mail-invalide grace à ng-show en rouge quand l'email saise n'est pas valide grace au service $error-->
+     <div id="red" ng-show="monFormulaire.monTexte.$error.email">Email-invalide</div>
+     <!-- affiche E-mail valide grace à ng-show en vert quand la saisie est bonne au service $valide-->
+     <div id="green" ng-show="monFormulaire.monTexte.$valid">Email valide</div>
+     </form>
+   </body>
+  <script src="assets/js/script.js"></script>
+</html>
